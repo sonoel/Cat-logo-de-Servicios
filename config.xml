@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<widget xmlns = "http://www.w3.org/ns/widgets"
+    xmlns:gap = "http://phonegap.com/ns/1.0"
+    id        = "com.phonegap.nscm"
+    version   = "1.0.0">
+
+<plugin name="cordova-plugin-inappbrowser" spec="~3.0.0" />
+
+<name>Catalogo de Servicios</name>
+
+<description>
+Catálogo de Servicios
+</description>
+
+<author href="" email="sonoel_97@hotmail.com">
+Noel Sánchez
+</author>
+
+<icon src="images/icono-servicios.png" gap:density="ldpi" gap:platform="android" />
+<icon src="images/icono-servicios.png" gap:density="mdpi" gap:platform="android" />
+<icon src="images/icono-servicios.png" gap:density="hdpi" gap:platform="android" />
+<icon src="images/icono-servicios.png" gap:density="xhdpi" gap:platform="android" />
+
+</widget>
