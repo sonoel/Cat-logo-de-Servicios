@@ -44,6 +44,7 @@ function onDeviceReady(){
 	 });
 }
 
+/*
 function readFile(input) {
 	if (input.files && input.files[0]) {
 		var reader = new FileReader();
@@ -63,6 +64,7 @@ var fileUpload = document.getElementById('file-upload');
 fileUpload.onchange = function (e) {
 	readFile(e.srcElement);
 }
+*/
 
 /* 
 * creación de la base de datos
