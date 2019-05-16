@@ -1,8 +1,8 @@
 @charset "UTF-8";
 /* CSS Document */
 
-#cajaCategorias input{
-	visibility: hidden;
+body {
+	background-color: #CBCBCB;
 }
 
 .img_peq{
@@ -31,6 +31,12 @@
 
 #paypal {
 	width: 20%;
+	cursor: pointer;
+}
+
+
+#cajaCategorias input{
+	visibility: hidden;
 }
 
 #foto, #fotoEdit{
