@@ -165,9 +165,7 @@ function queryDetalleSuccess(tx, results) {
 		$("#foto_img").attr("src", _foto);
 		$("#nombre").html($.registro.nombre + " " + $.registro.apellidos);
 		$("#num_tel").html("Teléfono: " + $.registro.telefono);
-		$("#telefono").attr("href", "tel: " + $.registro.telefono);
 		$("#label_mail").html("Email: " + $.registro.email);
-		$("#email").attr("href", "mailto: " + $.registro.email);
 }
 
 
@@ -239,6 +237,7 @@ function saveEditForm(){
 
 function queryDBUpdateForm(tx){
 	var cat = $("#cajaCategorias").find("input:checked").val();
+	$.imageURL= $("#imageUpload").val();
 	tx.executeSql('UPDATE agenda_curso SET nombre="'+$("#ti_nombre").val()+'", apellidos="'+$("#ti_apellidos").val()+'",telefono="'+$("#ti_telefono").val()+'",email="'+$("#ti_mail").val()+'",categoria="'+cat+'",foto = "'+$.imageURL+'" WHERE id='+$.id);
 }
 function updateFormSuccess(tx) {
@@ -272,7 +271,7 @@ function saveNewForm(){
 
 function queryDBInsertForm(tx){
 	var cat = $("#cajaCategorias").find("input:checked").val();
-	
+	$.imageURL= $("#imageUpload").val();
 	tx.executeSql("INSERT INTO agenda_curso (nombre,apellidos,telefono,categoria,foto,email) VALUES ('"+$("#ti_nombre").val()+"','"+$("#ti_apellidos").val()+"','"+$("#ti_telefono").val()+"','"+cat+"','"+$.imageURL+"','"+$("#ti_mail").val()+"')", [], newFormSuccess, errorDB);
 }
 function newFormSuccess(tx, results) {
@@ -280,7 +279,7 @@ function newFormSuccess(tx, results) {
 	var lista = $("#lista_" + cat + " ul")
 	
 	
-	var obj = $('<li id="li_'+results.insertId+'"><a href="#detalle" data-uid='+results.insertId+' class="linkDetalles"><div class="interior_lista"><img src="'+ $.imageUR +'" class="img_peq"/><span>' + $("#ti_nombre").val() + " " + $("#ti_apellidos").val()+ '</span></div></a><a href="#form"  data-theme="a" data-uid='+results.insertId+'  class="linkForm">Predet.</a></li>');
+	var obj = $('<li id="li_'+results.insertId+'"><a href="#detalle" data-uid='+results.insertId+' class="linkDetalles"><div class="interior_lista"><img src="'+ $.imageURL +'" class="img_peq"/><span>' + $("#ti_nombre").val() + " " + $("#ti_apellidos").val()+ '</span></div></a><a href="#form"  data-theme="a" data-uid='+results.insertId+'  class="linkForm">Predet.</a></li>');
 	obj.find('.linkDetalles').bind('click', function(e){
 		$.id = $(this).data('uid');
 	});
