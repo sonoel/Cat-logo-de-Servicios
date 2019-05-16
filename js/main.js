@@ -44,6 +44,25 @@ function onDeviceReady(){
 	 });
 }
 
+function readFile(input) {
+	if (input.files && input.files[0]) {
+		var reader = new FileReader();
+
+		reader.onload = function (e) {
+			var picture = document.getElementById('fotoEdit_img');
+			picture.src = e.target.result;
+			$.imageURL = picture.src;
+			console.log(e.target.result);
+		}
+
+		reader.readAsDataURL(input.files[0]);
+	}
+}
+
+var fileUpload = document.getElementById('file-upload');
+fileUpload.onchange = function (e) {
+	readFile(e.srcElement);
+}
 
 /* 
 * creación de la base de datos
