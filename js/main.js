@@ -242,7 +242,7 @@ function queryFormSuccess(tx, results) {
 		$("#ti_telefono").val($.registro.telefono);
 		$("#ti_mail").val($.registro.email);
 		
-		$("#cat_"+$.registro.categoria).trigger("click").trigger("click");	//$("#cat_"+$.registro.categoria).attr("checked",true).checkboxradio("refresh");
+		$("#cat_"+$.registro.categoria).trigger("click").trigger("click");
 }
 $(document).on('pagebeforeshow', '#home', function(){
 	$.id = -1;
@@ -256,7 +256,7 @@ function initForm(){
 	$("#ti_telefono").val("");
 	$("#ti_mail").val("");
 		
-	$("#cat_familia").trigger("click").trigger("click")
+	$("#cat_Computacion").trigger("click").trigger("click")
 }
 
 
