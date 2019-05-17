@@ -197,11 +197,13 @@ $(document).on('pagebeforeload', '#form', function(){
 	if ($.id != -1) {
 		$("#b_eliminar").toggle(true);
 	}
+	else {
+		$("#b_eliminar").toggle(false);
+	}
 });
 
-$(document).on('pagehide', '#form', function(){
-	$("#b_eliminar").toggle(false);
-});(db != null){
+function deleteForm(){
+	if(db != null){
 		db.transaction(queryDelete, errorDB, queryDeleteSucess);
 	}
 }
@@ -245,6 +247,7 @@ function queryFormSuccess(tx, results) {
 }
 $(document).on('pagebeforeshow', '#home', function(){
 	$.id = -1;
+	$("#b_eliminar").toggle(false);
 });
 function initForm(){
 	$.imageURL = no_foto;
