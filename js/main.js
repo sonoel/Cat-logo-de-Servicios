@@ -193,13 +193,22 @@ $(document).on('pagehide', '#form', function(){
 	$("#b_eliminar").toggle(false);
 });
 
-function queryDelete(tx) {
-    tx.executeSql('DELETE * FROM agenda_curso WHERE id='+$.id, queryDeleteSuccess, errorDB);
+function deleteForm(){
+	if(db != null){
+		db.transaction(queryDelete, errorDB, queryDeleteSucess);
+	}
 }
 
-function queryFormSuccess(tx, results) {
+function queryDelete(tx) {
+    tx.executeSql('DELETE * FROM agenda_curso WHERE id='+$.id);
+}
+
+function queryDeleteSucess(tx) {
 	
 	$("#li_"+$.id).remove();
+	
+	var lista = $("#lista_" + cat + " ul")
+	lista.listview('refresh');
 	
 	
 	$.mobile.changePage("#home");
