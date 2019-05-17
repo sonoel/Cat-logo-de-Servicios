@@ -9,11 +9,11 @@
 <name>Catalogo de Servicios</name>
 
 <description>
-Catálogo de Servicios
+Servicios para todos
 </description>
 
 <author href="" email="sonoel_97@hotmail.com">
-Noel Sánchez
+Noel Sánchez Cuen Muñoz
 </author>
 
 <icon src="images/icono-servicios.png" gap:density="ldpi" gap:platform="android" />
