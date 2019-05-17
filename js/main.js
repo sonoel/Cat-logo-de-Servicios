@@ -43,6 +43,10 @@ function onDeviceReady(){
 			saveNewForm();
 		 }
 	 });
+	
+	$("#b_eliminar").click(function(e){
+		deleteForm();
+	 });
 }
 
 function imagenBase64(evt) {
@@ -131,6 +135,7 @@ function cargaDatosSuccess(tx, results){
 	
 	$(".linkForm").click(function(e){
 		$.id = $(this).data("uid");
+		$("#b_eliminar").show();
 	});
 }
 
@@ -182,7 +187,6 @@ function queryDetalleSuccess(tx, results) {
 //vista de la página de edición
 $(document).on('pagebeforeshow', '#form', function(){ 
 	mkLog('ID recuperado en vista form: ' + $.id);
-	$("#b_eliminar").toggle(true);
 	initForm();
 	if(db != null && $.id != -1){
 		db.transaction(queryDBFindByIDForm, errorDB);
@@ -190,7 +194,7 @@ $(document).on('pagebeforeshow', '#form', function(){
 });
 
 $(document).on('pagehide', '#form', function(){ 
-	$("#b_eliminar").toggle(false);
+	$("#b_eliminar").hide();
 });
 
 function deleteForm(){
