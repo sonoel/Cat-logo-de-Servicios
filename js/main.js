@@ -44,6 +44,18 @@ function onDeviceReady(){
 	 });
 }
 
+function imagenBase64(evt) {
+	var files = evt.target.files;
+	var reader = new FileReader();
+
+	reader.readAsDataURL(files[0]);
+	reader.onload = (function(theFile) {
+	  document.getElementById("base64textarea").value=theFile.target.result;
+	});
+}
+
+
+document.getElementById('fotoUpload').addEventListener('change', imagenBase64, false);
 
 /* 
 * creación de la base de datos
