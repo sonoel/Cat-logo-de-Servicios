@@ -195,11 +195,8 @@ $(document).on('pagehide', '#form', function(){
 });
 
 function deleteForm(){
-	alert("hello");
 	if(db != null){
-		alert("hello");
 		db.transaction(queryDelete, errorDB, queryDeleteSucess);
-		alert("hello");
 	}
 }
 
@@ -210,9 +207,6 @@ function queryDelete(tx) {
 function queryDeleteSucess(tx) {
 	
 	$("#li_"+$.id).remove();
-	
-	var lista = $("#lista_" + cat + " ul")
-	lista.listview('refresh');
 	
 	
 	$.mobile.changePage("#home");
