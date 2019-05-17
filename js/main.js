@@ -243,6 +243,7 @@ function queryFormSuccess(tx, results) {
 }
 $(document).on('pagebeforeshow', '#home', function(){
 	$.id = -1;
+	$("#b_eliminar").toggle(false);
 });
 function initForm(){
 	$.imageURL = no_foto;
