@@ -190,9 +190,11 @@ $(document).on('pagebeforeshow', '#form', function(){
 	initForm();
 	if ($.id != -1) {
 		$("#b_eliminar").toggle(true);
+		$("#formHeader").html("Edición del Servicio");
 	}
 	else {
 		$("#b_eliminar").toggle(false);
+		$("#formHeader").html("Alta de Servicios");
 	}
 	if(db != null && $.id != -1){
 		db.transaction(queryDBFindByIDForm, errorDB);
