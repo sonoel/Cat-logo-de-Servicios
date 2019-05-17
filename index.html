@@ -23,11 +23,10 @@
       <div data-role="header">
         <div class="ui-btn-left">
         <a href="#form" data-role="button" data-inline="true" data-icon="plus" data-iconpos="notext">Nuevo</a>
-        <a href="#contactos" data-role="button" data-inline="true" data-icon="grid" data-iconpos="notext">Contactos</a>
         </div>
-      	<h1>Servicios</h1>
+      	<h1>Catálogo de Servicios</h1>
         <div class="ui-btn-right">
-        <a href="#ayuda" data-role="button" data-inline="true" data-icon="info" data-iconpos="notext">Ayuda</a>
+        <a href="#acerca" data-role="button" data-inline="true" data-icon="info" data-iconpos="notext">Acerca de mi</a>
         </div>
       </div>
       <div data-role="content">
@@ -50,20 +49,12 @@
             </ul>
           </div>
         </div>
-        <img id="paypal" src="images/PaypalDonar.png" onclick="window.open('https://www.paypal.me/sonoel', '_system'); return false;">
-        
-        
-
-      </div>
-      <div data-role="footer">
-    <div data-role="controlgroup" data-type="horizontal"><a href="#con" data-role="button">Atrás</a><a href="#inf" data-role="button" data-rel="dialog">Info</a><a href="#fac" data-role="button">Siguiente</a></div>
-    
-  </div>
     </div>
-    
-    
-    
-    
+      
+      <div data-role="footer" data-position="fixed">
+    	<div data-role="controlgroup" data-type="horizontal"><a href="#acerca" data-role="button">Atrás</a><a href="#info" data-role="button" data-rel="dialog">Info</a><a href="#form" data-role="button">Siguiente</a></div>
+  	  </div>
+    </div>
     
     
     
@@ -73,7 +64,7 @@
           <div class="ui-btn-left">
             <a href="#" data-role="button" data-inline="true" data-icon="back" data-iconpos="notext" data-rel="back">Volver</a>
        	</div>
-        <h1>Detalle</h1>
+        <h1>Información del Servicio</h1>
       </div>
       <div data-role="content">
       	<div class="caja_blanca">
@@ -86,9 +77,9 @@
          <div ><span id="num_tel">6699900970</span></div>
         <div ><span id="label_mail">m.olivarria@ccumazatlan.mx</span></div>
         </div>
-
-
       </div>
+      
+  	  
     </div>
     
     
@@ -138,9 +129,14 @@
                </div>
         </div>
         <button id="b_guardar">Guardar</button>
+        <button id="b_cancelar">Cancelar</button>
         <button id="b_eliminar" style="display: none;">Eliminar</button>
-        
        </div>
+       
+       <div data-role="footer" data-position="fixed">
+    	<div data-role="controlgroup" data-type="horizontal"><a href="#home" data-role="button">Atrás</a><a href="#home" data-role="button">Inicio</a><a href="#info" data-role="button" data-rel="dialog">Info</a><a href="#acerca" data-role="button">Siguiente</a></div>
+  	  </div>
+  	  
     </div>
     
     
@@ -148,61 +144,38 @@
     
     
     <!--buscador de contactos de la agenda-->
-    <div data-role="page" id="contactos">
+    <div data-role="page" id="info">
       <div data-role="header">
-      	<div class="ui-btn-left">
-            <a href="#" data-role="button" data-inline="true" data-icon="back" data-iconpos="notext" data-rel="back">Volver</a>
-       	</div>
-        <h1>Contactos</h1>
+        <h1>Más Información</h1>
       </div>
-      <div data-role="content" align="center">
-        <div data-role="fieldcontain">
-          <input type="text" name="ti_search" id="ti_search" value="" placeholder="Nombre" />
-        </div>
-        <button id="b_buscar">Buscar</button>
+      <div data-role="content" align="center" style="font-size: 22px;">
+        <ul data-role="listview" data-inset="true">
+          <li>Aplicación desarrollada mediante PhoneGap para Proyecto Final</li>
+          <li>Por Noel Sánchez Cuen Muñoz - Mayo de 2019</li>
+        </ul>
       </div>
     </div>
-    
-    
-    
-   <!-- formulario de envío de mails-->
-    <div data-role="page" id="mail_page">
-      <div data-role="header">
-      	<div class="ui-btn-left">
-            <a href="#" data-role="button" data-inline="true" data-icon="back" data-iconpos="notext" data-rel="back">Volver</a>
-       	</div>
-        <h1>Email</h1>
-      </div>
-      <div data-role="content">
-        <div data-role="fieldcontain">
-          <input type="text" name="ti_asunto" id="ti_asunto" value="" placeholder="asunto"  />
-        </div>
-        <div data-role="fieldcontain">
-          <textarea cols="40" rows="8" name="ta_body" id="ta_body" placeholder="Este es el cuerpo del mensaje"></textarea>
-        </div>
-        <button id="b_enviar">Enviar</button>
-      </div>
-    </div>
-    
-    
     
     
     <!--página de ayuda-->
-    <div data-role="page" id="ayuda">
+    <div data-role="page" id="acerca">
       <div data-role="header">
-      	<div class="ui-btn-left">
-            <a href="#" data-role="button" data-inline="true" data-icon="back" data-iconpos="notext" data-rel="back">Volver</a>
-       	</div>
-        <h1>Ayuda</h1>
+        <h1>Acerca de mí</h1>
       </div>
-      <div data-role="content">
-     	 <ul id="listaAyuda">
-        	<li>Usa el + para añadir contactos</li>
-            <li>Con el segundo botón del header podrás añadir contactos de tu agenda</li>
-            <li>Selecciona la categoría de contactos y podrás verlos</li>
-            <li>Haz click en el ojo para ver los detalles del contacto y para actuar sobre él</li>
+      <div data-role="content" align="center" style="font-size: 22px">
+       	<img id="mifoto" src="images/Foto loquilla.jpg">
+        <ul data-role="listview" >
+          <li>Noel Sánchez Cuen Muñoz</li>
+          <li>Carrera: Licenciatura en Ingeniería en Sistemas de Información</li>
+          <li>Materia: Desarrollo de Aplicaciones para Comercio Electrónico</li>
         </ul>
+     	<img id="paypal" src="images/PaypalDonar.png" onclick="window.open('https://www.paypal.me/sonoel', '_system'); return false;">
       </div>
+      
+      <div data-role="footer" data-position="fixed">
+    	<div data-role="controlgroup" data-type="horizontal"><a href="#form" data-role="button">Atrás</a><a href="#home" data-role="button">Inicio</a><a href="#info" data-role="button" data-rel="dialog">Info</a><a href="#home" data-role="button">Siguiente</a></div>
+  	  </div>
+  	  
     </div>
     
     

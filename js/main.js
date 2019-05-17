@@ -44,6 +44,10 @@ function onDeviceReady(){
 			saveNewForm();
 		 }
 	 });
+	
+	$("#b_cancelar").click(function(e){
+		$.mobile.changePage("#home");
+	 });
 }
 
 function imagenBase64(evt) {
