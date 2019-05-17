@@ -49,7 +49,7 @@ function onDeviceReady(){
 function imagenBase64(evt) {
 	var files = evt.target.files;
 	var reader = new FileReader();
-
+	
 	reader.readAsDataURL(files[0]);
 	reader.onload = (function(theFile) {
 	  document.getElementById("fotoEdit_img").src=theFile.target.result;
@@ -201,7 +201,7 @@ function deleteForm(){
 }
 
 function queryDelete(tx) {
-    tx.executeSql('DELETE * FROM agenda_curso WHERE id='+$.id);
+    tx.executeSql('DELETE FROM agenda_curso WHERE id='+$.id);
 }
 
 function queryDeleteSucess(tx) {
@@ -245,7 +245,7 @@ $(document).on('pagebeforeshow', '#home', function(){
 });
 function initForm(){
 	$.imageURL = no_foto;
-	
+	alert("hello");
 	$("#fotoEdit_img").attr("src", $.imageURL);
 	$("#ti_nombre").val("");
 	$("#ti_apellidos").val("");
