@@ -136,7 +136,6 @@ function cargaDatosSuccess(tx, results){
 	
 	$(".linkForm").click(function(e){
 		$.id = $(this).data("uid");
-		$("#b_eliminar").toggle(true);
 	});
 }
 
@@ -194,8 +193,13 @@ $(document).on('pagebeforeshow', '#form', function(){
 	}
 });
 
-$(document).on('pagehide', '#form', function(){ 
-	$("#b_eliminar").toggle(false);
+$(document).on('pagebeforeload', '#form', function(){ 
+	if ($.id != -1) {
+		$("#b_eliminar").toggle(true);
+	}
+	else {
+		$("#b_eliminar").toggle(false);
+	}
 });
 
 function deleteForm(){
@@ -243,7 +247,6 @@ function queryFormSuccess(tx, results) {
 }
 $(document).on('pagebeforeshow', '#home', function(){
 	$.id = -1;
-	$("#b_eliminar").toggle(false);
 });
 function initForm(){
 	$.imageURL = no_foto;
