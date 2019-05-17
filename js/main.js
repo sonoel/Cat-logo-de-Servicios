@@ -195,8 +195,11 @@ $(document).on('pagehide', '#form', function(){
 });
 
 function deleteForm(){
+	alert("hello");
 	if(db != null){
+		alert("hello");
 		db.transaction(queryDelete, errorDB, queryDeleteSucess);
+		alert("hello");
 	}
 }
 
@@ -245,7 +248,6 @@ $(document).on('pagebeforeshow', '#home', function(){
 });
 function initForm(){
 	$.imageURL = no_foto;
-	alert("hello");
 	$("#fotoEdit_img").attr("src", $.imageURL);
 	$("#ti_nombre").val("");
 	$("#ti_apellidos").val("");
