@@ -22,6 +22,7 @@ function mkLog(text){
 function onBodyLoad() {    
 	document.addEventListener("deviceready", onDeviceReady, false);
 	document.getElementById('fotoUpload').addEventListener('change', imagenBase64, false);
+	document.getElementById('b_eliminar').addEventListener('click', deleteForm, false);
 }
 
 function onDeviceReady(){
@@ -42,10 +43,6 @@ function onDeviceReady(){
 		 }else{
 			saveNewForm();
 		 }
-	 });
-	
-	$("#b_eliminar").click(function(e){
-		deleteForm();
 	 });
 }
 
