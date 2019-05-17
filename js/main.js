@@ -51,7 +51,6 @@ function imagenBase64(evt) {
 
 	reader.readAsDataURL(files[0]);
 	reader.onload = (function(theFile) {
-	  document.getElementById("base64textarea").value=theFile.target.result;
 	  document.getElementById("fotoEdit_img").src=theFile.target.result;
 	  $.imageURL=theFile.target.result;
 	});
