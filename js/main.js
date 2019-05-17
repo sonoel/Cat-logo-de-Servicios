@@ -188,17 +188,14 @@ function queryDetalleSuccess(tx, results) {
 $(document).on('pagebeforeshow', '#form', function(){ 
 	mkLog('ID recuperado en vista form: ' + $.id);
 	initForm();
-	if(db != null && $.id != -1){
-		db.transaction(queryDBFindByIDForm, errorDB);
-	}
-});
-
-$(document).on('pagebeforeload', '#form', function(){ 
 	if ($.id != -1) {
 		$("#b_eliminar").toggle(true);
 	}
 	else {
 		$("#b_eliminar").toggle(false);
+	}
+	if(db != null && $.id != -1){
+		db.transaction(queryDBFindByIDForm, errorDB);
 	}
 });
 
