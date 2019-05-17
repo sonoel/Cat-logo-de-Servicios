@@ -197,13 +197,11 @@ $(document).on('pagebeforeload', '#form', function(){
 	if ($.id != -1) {
 		$("#b_eliminar").toggle(true);
 	}
-	else {
-		$("#b_eliminar").toggle(false);
-	}
 });
 
-function deleteForm(){
-	if(db != null){
+$(document).on('pagehide', '#form', function(){
+	$("#b_eliminar").toggle(false);
+});(db != null){
 		db.transaction(queryDelete, errorDB, queryDeleteSucess);
 	}
 }
