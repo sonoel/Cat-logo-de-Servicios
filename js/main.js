@@ -81,8 +81,6 @@ function creaNuevaDB(tx){
 		"email VARCHAR(30) )";
 		
 	tx.executeSql(sql);
-	
-	tx.executeSql("INSERT INTO agenda_curso (id,nombre,apellidos,telefono,categoria,foto,email) VALUES (1,'Mónica','Olivarría','+6699900970','amigo','','m.olivarria@ccumazatlan.mx')");
 }
 
 
@@ -184,12 +182,28 @@ function queryDetalleSuccess(tx, results) {
 //vista de la página de edición
 $(document).on('pagebeforeshow', '#form', function(){ 
 	mkLog('ID recuperado en vista form: ' + $.id);
-	
+	$("#b_eliminar").toggle(true);
 	initForm();
 	if(db != null && $.id != -1){
 		db.transaction(queryDBFindByIDForm, errorDB);
 	}
 });
+
+$(document).on('pagehide', '#form', function(){ 
+	$("#b_eliminar").toggle(false);
+});
+
+function queryDelete(tx) {
+    tx.executeSql('DELETE * FROM agenda_curso WHERE id='+$.id, [], queryDeleteSuccess, errorDB);
+}
+
+function queryFormSuccess(tx, results) {
+	
+	$("#li_"+$.id).remove();
+	
+	
+	$.mobile.changePage("#home");
+}
 
 function queryDBFindByIDForm(tx) {
     tx.executeSql('SELECT * FROM agenda_curso WHERE id='+$.id, [], queryFormSuccess, errorDB);
