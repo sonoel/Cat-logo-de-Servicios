@@ -194,7 +194,7 @@ $(document).on('pagehide', '#form', function(){
 });
 
 function queryDelete(tx) {
-    tx.executeSql('DELETE * FROM agenda_curso WHERE id='+$.id, [], queryDeleteSuccess, errorDB);
+    tx.executeSql('DELETE * FROM agenda_curso WHERE id='+$.id, queryDeleteSuccess, errorDB);
 }
 
 function queryFormSuccess(tx, results) {
