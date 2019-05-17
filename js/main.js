@@ -21,6 +21,7 @@ function mkLog(text){
 */
 function onBodyLoad() {    
 	document.addEventListener("deviceready", onDeviceReady, false);
+	document.getElementById('fotoUpload').addEventListener('change', imagenBase64, false);
 }
 
 function onDeviceReady(){
@@ -55,7 +56,6 @@ function imagenBase64(evt) {
 }
 
 
-document.getElementById('fotoUpload').addEventListener('change', imagenBase64, false);
 
 /* 
 * creación de la base de datos
