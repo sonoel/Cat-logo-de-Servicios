@@ -260,7 +260,7 @@ function initForm(){
 	$("#ti_telefono").val("");
 	$("#ti_mail").val("");
 	$("#ti_nota").val("");
-		
+	$("#fotoUpload").val("");
 	$("#cat_Computacion").trigger("click").trigger("click")
 }
 
