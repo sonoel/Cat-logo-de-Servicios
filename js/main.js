@@ -136,7 +136,7 @@ function cargaDatosSuccess(tx, results){
 	
 	$(".linkForm").click(function(e){
 		$.id = $(this).data("uid");
-		$("#b_eliminar").show();
+		$("#b_eliminar").toggle(true);
 	});
 }
 
@@ -195,7 +195,7 @@ $(document).on('pagebeforeshow', '#form', function(){
 });
 
 $(document).on('pagehide', '#form', function(){ 
-	$("#b_eliminar").hide();
+	$("#b_eliminar").toggle(false);
 });
 
 function deleteForm(){
